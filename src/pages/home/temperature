@@ -1,0 +1,12 @@
+[{"id":109,"exact":37,"ipaddress":"84.203.97.254","latitude":54.0316845,"longditude":-6.132693,"time":"2020-03-22T20:21:32"}, 
+ {"id":110,"exact":39,"ipaddress":"84.203.97.254","latitude":54.0316845,"longditude":-6.132693,"time":"2020-03-22T20:41:39"}, 
+ {"id":111,"exact":21,"ipaddress":"127.0.0.1","latitude":21,"longditude":22,"time":null}, 
+ {"id":112,"exact":21,"ipaddress":"127.0.0.1","latitude":21,"longditude":22,"time":null}, 
+ {"id":113,"exact":null,"ipaddress":"127.0.0.1","latitude":null,"longditude":null,"time":null}, 
+ {"id":114,"exact":77,"ipaddress":"127.0.0.1","latitude":53.8530126368727,"longditude":-6.5423583984375,"time":null}, 
+ {"id":115,"exact":34,"ipaddress":"127.0.0.1","latitude":54.0179363489347,"longditude":-6.20590209960938,"time":null}, 
+ {"id":116,"exact":45,"ipaddress":"127.0.0.1","latitude":53.2980551741556,"longditude":-6.26220736652613,"time":null}, 
+ {"id":117,"exact":55,"ipaddress":"127.0.0.1","latitude":54.0009889984156,"longditude":-6.40777587890625,"time":"2020-03-28T21:05:16.1"}, 
+ {"id":118,"exact":39,"ipaddress":"127.0.0.1","latitude":54.0318925494638,"longditude":-6.12934112548828,"time":"2020-03-28T21:20:49.964"}, 
+ {"id":119,"exact":null,"ipaddress":"127.0.0.1","latitude":null,"longditude":null,"time":null}, 
+ {"id":120,"exact":null,"ipaddress":"127.0.0.1","latitude":null,"longditude":null,"time":null}]

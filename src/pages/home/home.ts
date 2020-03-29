@@ -4,6 +4,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import leaflet from 'leaflet';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import { LoadingController } from "ionic-angular";
@@ -36,6 +37,7 @@ export class HomePage implements OnInit {
     public alertCtrl: AlertController,
     private geolocation: Geolocation,
     private diagnostic: Diagnostic,
+public http: HttpClient,
     private loadingCtrl: LoadingController) {
     this.isLocationAvailable = false;
     this.records = this.localStorage.get('records');
@@ -240,22 +242,44 @@ export class HomePage implements OnInit {
 
 
   doSubmitData(data) {
-
+let dateTime = new Date();
     this.records.push(data);
+      let postdata = {
+      "exact":data.temperature,
+      "latitude":data.lat,
+      "longditude":data.long,
+      "ipaddress":"127.0.0.1",
+      "time":dateTime
+      };
+
+
     this.data = {};
-    data = {};
-    this.localStorage.set('records', this.records);
+      data = {};
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+    })
+  };
+      this.localStorage.set('records', this.records);
+
     let alert = this.alertCtrl.create({
       title: 'New Location!',
-      subTitle: 'New Location Successfully added!',
+      subTitle: 'New Reading Successfully added! See you tomorrow.',
       buttons: ['OK']
     });
     alert.present();
     this.navCtrl.push(ListPage, {
     })
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
-
-    //console.log(this.localStorage.get(data));
+      //exact=input$temperature, latitude=input$lat, longditude=input$long, time=Sys.time(), ipaddress=input$ipaddress
+      console.log(this.localStorage.get(data));
+      console.log(postdata);
+       this.http.post("http://127.0.0.1:3000/temperature", postdata, httpOptions)
+      .subscribe(data => {
+        console.log(data['_body']);
+       }, error => {
+        console.log(error);
+      });
   }
 
 }

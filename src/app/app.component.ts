@@ -22,8 +22,8 @@ export class MyApp {
 //    this.headerColor.tint('#becb29');
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Add Location', component: HomePage},
-      { title: 'Locations', component: ListPage }
+      { title: 'Add Reading', component: HomePage},
+      { title: 'Readings', component: ListPage }
        ];
     this.icons = {
       add: 'add-circle',
